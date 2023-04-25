@@ -24,6 +24,7 @@ Go 1.10 or above.
 time()
 strtotime()
 date()
+Currentdate()
 checkdate()
 sleep()
 usleep()

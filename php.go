@@ -61,6 +61,11 @@ func Date(format string, timestamp int64) string {
 	return time.Unix(timestamp, 0).Format(format)
 }
 
+// Note: the behavior is inconsistent with php's date function
+func Currentdate() string {
+	return time.Unix(Time(), 0).Format("2006/01/02 15:04:05")
+}
+
 // Checkdate checkdate()
 // Validate a Gregorian date
 func Checkdate(month, day, year int) bool {
