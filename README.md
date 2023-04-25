@@ -1,25 +1,25 @@
 # gofunctools
 
-[![GoDoc](https://godoc.org/github.com/chenpeng78/gofunctools?status.svg)](https://godoc.org/github.com/chenpeng78/gofunctools)
-[![Go Report Card](https://goreportcard.com/badge/github.com/chenpeng78/gofunctools)](https://goreportcard.com/report/github.com/chenpeng78/gofunctools)
+[![GoDoc](https://godoc.org/github.com/chenpeng78/gofunctools?status.svg)]()
+[![Go Report Card](https://goreportcard.com/badge/github.com/chenpeng78/gofunctools)]()
 [![MIT licensed][3]][4]
 
 [3]: https://img.shields.io/badge/license-MIT-blue.svg
 [4]: LICENSE
 
-Use Golang to implement PHP's common built-in functions. About 140+ functions have been implemented.
+使用Golang实现PHP的常见的内置函数。约140 +功能已经实现。
 
-## Install
+## 使用
 ```shell
 go get github.com/chenpeng78/gofunctools
 ```
 
-## Requirements
+## 要求
 Go 1.10 or above.
 
-## PHP Functions
+## PHP函数
 
-### Date/Time Functions
+### 日期时间 函数
 ```php
 time()
 strtotime()
@@ -29,7 +29,7 @@ sleep()
 usleep()
 ```
 
-### String Functions
+### 字符串 函数
 ```php
 strpos()
 stripos()
@@ -77,13 +77,13 @@ soundex()
 parse_str()
 ```
 
-### Multibyte String Functions
+### 多字节字符串 函数
 ```php
 mb_strlen()
 mb_strtoupper()
 ```
 
-### URL Functions
+### URL 函数
 ```php
 base64_encode()
 base64_decode()
@@ -95,7 +95,7 @@ rawurldecode()
 http_build_query()
 ```
 
-### Array(Slice/Map) Functions
+### 数组(Slice/Map) 函数
 ```php
 array_fill()
 array_flip()
@@ -118,7 +118,7 @@ implode()
 in_array()
 ```
 
-### Mathematical Functions
+### 数学 函数
 ```php
 abs()
 rand()
@@ -140,13 +140,13 @@ base_convert()
 is_nan()
 ```
 
-### CSPRNG Functions
+### CSPRNG 函数
 ```php
 random_bytes()
 random_int()
 ```
 
-### Directory/Filesystem Functions
+### 目录文件系统 函数
 ```php
 stat()
 pathinfo()
@@ -175,20 +175,20 @@ fgetcsv()
 glob()
 ```
 
-### Variable handling Functions
+### 变量处理 函数
 ```php
 empty()
 is_numeric()
 ```
 
-### Program execution Functions
+### 程序执行 函数
 ```php
 exec()
 system()
 passthru()
 ```
 
-### Network Functions
+### 网络 函数
 ```php
 gethostname()
 gethostbyname()
@@ -198,7 +198,7 @@ ip2long()
 long2ip()
 ```
 
-### Misc. Functions
+### 杂项 函数
 ```php
 echo()
 uniqid()
