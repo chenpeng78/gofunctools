@@ -28,6 +28,7 @@ Currentdate()
 checkdate()
 sleep()
 usleep()
+GetFormattedDate()
 ```
 
 ### 字符串 函数
