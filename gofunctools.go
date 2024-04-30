@@ -48,7 +48,7 @@ func GetFormattedDate(dateTimeStr, formatPattern string) (string, error) {
 	if err != nil {
 		return "", fmt.Errorf("error parsing date time: %v", err)
 	}
-	
+	formatPattern = strings.ToUpper(formatPattern) // 将格式模式转换为全部大写
 	patterns := strings.Split(formatPattern, "-")
 	var parts []string
 
