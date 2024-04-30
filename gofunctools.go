@@ -14,7 +14,6 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
-	"golang.org/x/text/cases"
 	"hash/crc32"
 	"html"
 	"io"
@@ -34,9 +33,54 @@ import (
 	"time"
 	"unicode"
 	"unicode/utf8"
+
+	"golang.org/x/text/cases"
 )
 
 //////////// Date/Time Functions ////////////
+
+// GetFormattedDate 根据输入的日期时间字符串和格式组合返回相应的日期字符串
+// dateTimeStr 应该是 "2006-01-02 15:04:05" 格式。
+// formatPattern 可以是 "Y", "M", "D" 的任意组合以及可选的分隔符 "-"，例如 "YM", "YMD", "Y-M", "Y-M-D" 等。
+func GetFormattedDate(dateTimeStr, formatPattern string) (string, error) {
+	const layout = "2006-01-02 15:04:05"
+	date, err := time.Parse(layout, dateTimeStr)
+	if err != nil {
+		return "", fmt.Errorf("error parsing date time: %v", err)
+	}
+	
+	patterns := strings.Split(formatPattern, "-")
+	var parts []string
+
+	for _, p := range patterns {
+		var part string
+		for _, r := range p { // 对每段独立处理
+			switch r {
+			case 'Y':
+				part += fmt.Sprintf("%d", date.Year())
+			case 'M':
+				if part != "" && !strings.HasSuffix(part, "-") {
+					part += fmt.Sprintf("%02d", date.Month())
+				} else {
+					part += fmt.Sprintf("%02d", date.Month())
+				}
+			case 'D':
+				if part != "" && !strings.HasSuffix(part, "-") {
+					part += fmt.Sprintf("%02d", date.Day())
+				} else {
+					part += fmt.Sprintf("%02d", date.Day())
+				}
+			default:
+				return "", fmt.Errorf("invalid format character: %c", r)
+			}
+		}
+		parts = append(parts, part)
+	}
+
+	result := strings.Join(parts, "-") // 使用"-"将处理过的各部分连接起来
+
+	return result, nil
+}
 
 // Time time()
 func Time() int64 {
