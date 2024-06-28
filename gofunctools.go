@@ -107,7 +107,7 @@ func Date(format string, timestamp int64) string {
 
 // Note: the behavior is inconsistent with php's date function
 func Currentdate() string {
-	return time.Unix(Time(), 0).Format("2006/01/02 15:04:05")
+	return time.Unix(Time(), 0).Format("2006-01-02 15:04:05")
 }
 
 // Checkdate checkdate()
